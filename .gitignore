@@ -1,0 +1,10 @@
+example_lectures
+*.aux
+*.log
+*.synctex.gz
+*.toc  
+*.fdb_latexmk
+*.dvi
+*.fls
+*.pdf
+*.out
