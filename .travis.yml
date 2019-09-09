@@ -1,10 +1,24 @@
+language: general
 sudo: required
 dist: trusty
 before_install:
-    - sudo apt-get install -y --no-install-recommends
-      texlive-fonts-recommended texlive-generic-recommended
-      texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
-      texlive-base texlive-pictures texlive-lang-cyrillic texlive-science texlive-generic-extra
-      pgf
+  - sudo apt-get install -y --no-install-recommends
+    texlive-fonts-recommended texlive-generic-recommended
+    texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+    texlive-base texlive-pictures texlive-lang-cyrillic texlive-science texlive-generic-extra
+    pgf latexmk
 script:
-    ./build_all.sh
+  - ./build_all.sh
+before_deploy:
+  - openssl aes-256-cbc -K $encrypted_5a74adeb4353_key -iv $encrypted_5a74adeb4353_iv -in github_deploy_key.enc -out github_deploy_key -d
+  - chmod 600 github_deploy_key
+  - eval $(ssh-agent -s)
+  - ssh-add github_deploy_key
+deploy:
+  - provider: script
+    script: bash publish_pdfs.sh
+    skip_cleanup: true
+    on: 
+      branch: master
+
+

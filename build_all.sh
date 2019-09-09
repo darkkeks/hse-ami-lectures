@@ -1,9 +1,14 @@
+#!/bin/bash
+
 build() {
     pushd $1
-    pdflatex -interaction=nonstopmode -halt-on-error -output-directory=../_build $2
+    latexmk -pdf -interaction=nonstopmode -halt-on-error $1.tex 
+    cp *.pdf ../_build/
+    latexmk -c
     popd
 }
 
 mkdir _build
-build "linear_algebra" "linear_algebra_19.tex"
-build "mathematical_analysis" "mathematical_analysis_19.tex"
+
+build linear_algebra
+build mathematical_analysis

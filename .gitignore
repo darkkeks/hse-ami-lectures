@@ -1,4 +1,4 @@
-example_lectures
+_build
 *.aux
 *.log
 *.synctex.gz
