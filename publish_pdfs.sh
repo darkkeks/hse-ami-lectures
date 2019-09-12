@@ -2,7 +2,7 @@
 
 git clone git@github.com:DarkKeks/hse-ami-lectures-pdf.git
 
-mv _build/* hse-ami-lectures-pdf
+rsync -r _build/* hse-ami-lectures-pdf/
 
 cd hse-ami-lectures-pdf
 git add -A 
