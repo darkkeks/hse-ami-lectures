@@ -1,0 +1,115 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage[top=0.8in,bottom=0.8in,left=0.8in,right=0.8in,headheight=110pt]{geometry}
+\usepackage{mathtools, amsthm, amssymb}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage[unicode=true, colorlinks=true, linkcolor=blue]{hyperref}
+
+\renewcommand\qedsymbol{$\blacktriangle$}
+
+\begin{document}
+    \section*{ДЗ к Семинар 1}
+
+    \begin{enumerate}
+    \item
+        Используя метод математической индукции доказать следующее
+        \begin{enumerate}[label=\alph*)]
+        \item 
+            $6 | n(2n^2 - 3n + 1)$ для любого $n \in \mathbb{N}$ 
+
+            запись $a|b$ читается ``$a$ делит (нацело) $b$''
+        \item
+            $\sum_{k=1}^n k^3 = 1^3 + 2^3 + \dots + (n - 1)^3 + n^3 = \left( \frac{n(n + 1)}{2} \right)^2$
+
+            обратите внимание, что $\sum_{k=1}^n k^3 = \left( \sum_{k=1}^n k \right)^2$
+        \item 
+            $\sqrt{n} < 1 + \frac{1}{\sqrt{2}} + \dots + \frac{1}{\sqrt{n}} < 2 \sqrt{n}$ для любого $n \in \mathbb{N}$
+
+            hint: $\sqrt{a} - \sqrt{b} = \frac{a - b}{\sqrt{a} - \sqrt{b}}$
+        \end{enumerate}
+
+    \item 
+        Разобраться в следующем доказательстве
+        
+        прежде чем читать доказательство, можно попробовать доказать самостоятельно, но это не просто
+
+        Пусть $a_1, a_2, \dots, a_n$ -- произвольные положительные числа.
+        Тогда, для любого $n \in \mathbb{N}$:
+        \begin{equation}
+            \frac{a_1 + \dots + a_n}{n} \geq \sqrt[n]{a_1 \cdot a_2 \cdots a_n}
+            \tag{$\star$}
+        \end{equation}
+
+        т.е. среднее арифметическое не меньше среднего геометрического
+
+        \begin{proof}
+            $\sqrt{a_1 \cdot a_2} \leq \frac{a_1 + a_2}{2}$ // действительно, $(\sqrt{a_1} - \sqrt{a_2})^2 \geq 0$ //
+            
+            применим этот результат дважды:
+            \[
+                \sqrt[4]{a_1 a_2 a_3 a_4} 
+                \leq \frac{\sqrt{a_1 a_2} + \sqrt{a_3 a_4}}{2} 
+                \leq \frac{\frac{a_1 + a_2}{2} + \frac{a_3 + a_4}{2}}{2} 
+                = \frac{a_1 + a_2 + a_3 + a_4}{4}.
+            \]
+
+            Пользуясь индукцией мы получаем, что
+            \begin{equation}
+               (a_1 a_2 \dots a_{2^k})^{\frac{1}{2^k}} \leq \frac{a_1 + \dots + a_{2^k}}{2^k} \text{ для } \forall k
+               \tag{$\star\star$}
+           \end{equation}
+
+           [Проверьте эту индукцию аккуратно!]
+
+           Заметим, что мы доказали ($\star$) не для всех $n \in \mathbb{N}$, а только для степеней двойки (т.е. $P_1, P_2, P_4, P_8, \dots$)
+
+           А как доказать для остальных $n \in \mathbb{N}$?
+
+           На самом деле все уже доказано, просто надо понять почему.
+
+           Пусть $n \in \mathbb{N}$ -- произвольно и $a_1, a_2, \dots, a_n$ наши числа $\implies$ существует такое $k \in \mathbb{N}$, что $n \leq 2^k$.
+
+           Положим $b_j = \begin{cases}
+               a_i, & \text{если } i \leq n \\
+               A, & \text{если } n < i \leq 2^k
+           \end{cases}$, где $A = \frac{a_1 + \dots + a_n}{n}$
+
+           Применим ($\star\star$) к $b_1, b_2, \dots, b_{2^k} \implies \left(a_1 a_2 \dots a_n A^{2^k - n}\right)^\frac{1}{2^k} \leq \frac{\overbrace{a_1 + \dots + a_n}^{= nA} + (2^k - n) A}{2^k} = A \\ \implies (a_1 \dots a_n)^\frac{1}{2^k} \leq A^\frac{n}{2^k} \implies (\star)$
+        \end{proof}
+
+    \item
+        Полезно знать следующий трюк
+
+        Как найти сумму 
+        \[
+            S = 1 + 2 \cdot \frac{1}{3} + 3 \cdot \left(\frac{1}{3}\right)^2 + \dots + n \left(\frac{1}{3}\right)^{n - 1} = \text{ ?}
+        \]
+
+        Можно сделать так:
+
+        $\cdot$ рассмотрим функцию 
+        \begin{align*}
+            &f(x) = x + x^2 + \dots + x^n \implies \\
+            \implies &f'(x) = 1 + 2x + \dots + n x^{n - 1}
+        \end{align*}
+        / производная /
+
+        Легко видеть, что $S = f'\left(\frac{1}{3}\right)$
+
+        Но $f(x) = x + x^2 + \dots + x^n = 
+        x(\underbrace{1 + \dots + x^{n - 1}}_\text{сумма геометрической прогрессии}) 
+        = x \frac{1 - x^n}{1 - x}$
+        
+        Тогда $f'\left(\frac{1}{3}\right) 
+        = (x \frac{1 - x^n}{1 - x})' 
+        = \frac{(nx - n - 1) x^n + 1}{(x - 1)^2} 
+        \implies f'\left(\frac{1}{3}\right) = \boxed{\frac{3^{-n + 1} (3^{n + 1} - 2n - 3)}{4} = S}$
+
+        Если есть сомнения в корректности этого метода, то полученную формулу можно проверить по индукции
+    \end{enumerate}
+\end{document}
