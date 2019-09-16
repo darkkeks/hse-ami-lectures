@@ -153,39 +153,45 @@ $A = \implies A = diag(a_1, a_2, \dots, a_n)$
 
 \subsection{Системы линейных уравнений}
 
+\textit{Линейное уравнение} -- $a_1 x_1 + a_2 x_2 + \dots + a_n x_n = b$
+
+$a_1, a_2, \dots, a_n, b \in \RR$ -- коэффициенты
+
+$x_1, x_2, \dots, x_n$ -- неизвестные
+
+Система линейных уравнений:
+\begin{equation*}
+    \begin{cases}
+        \begin{matrix}
+        a_{11} x_1 + a_{12} x_2 + \dots + a_{1n} x_n = b_1 \\
+        a_{21} x_1 + a_{22} x_2 + \dots + a_{2n} x_n = b_2 \\
+        \hdotsfor{1} \\
+        a_{m1} x_1 + a_{m2} x_2 + \dots + a_{mn} x_n = b_m
+        \end{matrix}
+    \end{cases}
+\end{equation*}
+
 \begin{definition}
-    \textit{Линейное уравнение} -- $a_1 x_1 + a_2 x_2 + \dots + a_n x_n = b$
+    Решение одного уравнение -- это такой набор $x_1, x_2, \dots, x_n$, при подстановке которого в уравнение получаем тождество.
 
-    $a_1, a_2, \dots, a_n, b$ -- коэффициенты
-
-    $x_1, x_2, \dots, x_n$ -- неизвестные
+    Решение СЛУ -- такой набор значений неизвестных, которые является решением каждого уравнения СЛУ.
 \end{definition}
 
-Система линейных уравнений
-
-\begin{align*}
-    a_{11} x_1 + a_{12} x_2 + \dots + a_{1n} x_n &= b_1 \\
-    a_{21} x_1 + a_{22} x_2 + \dots + a_{2n} x_n &= b_2 \\
-    \vdots & \\
-    a_{m1} x_1 + a_{m2} x_2 + \dots + a_{mn} x_n &= b_m
-\end{align*}
-
-$a_{ij}, b_i \in \RR$
-
-Основная задача: решить СЛУ
+Основная задача: решить СЛУ, т.е. найти все решениея.
 
 \begin{example}
     $n = m = 1$
 
     $ax = b$
-
-    $a \neq 0 \implies x = \frac{b}{a}$
-
-    $a = 0 \implies 0x = b$
-
-    $b \neq 0 \implies$ нет решений
-
-    $b = 0 \implies x \in \RR$ -- бесконечно много решений
+    \begin{enumerate}[nosep]
+    \item $a \neq 0 \implies x = \frac{b}{a}$
+    \item 
+        $a = 0 \implies 0x = b$
+        \begin{itemize}[nosep]
+        \item $b \neq 0 \implies$ нет решений
+        \item $b = 0 \implies x \in \RR$ -- бесконечно много решений.
+        \end{itemize}
+    \end{enumerate}
 \end{example}
 
 \[
