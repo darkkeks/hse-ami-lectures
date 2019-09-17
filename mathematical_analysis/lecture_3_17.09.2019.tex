@@ -1,0 +1,50 @@
+\section{Понятие предела числовой последовательности}
+
+$x_1 = 1, x_2 = \frac{1}{2}, \dots, x_n = \frac{1}{n}, \dots$
+
+$\lim_{x \to \infty} x_n = 0$
+
+\begin{definition}
+    $x = \lim_{x\to\infty} x_n \quad \forall \epsilon > 0 \quad \exists N, \forall n > N \implies |x_n - a| < \epsilon$
+
+    $(a - \epsilon, a + \epsilon)$ -- $\epsilon$ окрестность точки $a$.
+\end{definition}
+
+\begin{definition}
+    $x_n$ -- называется бесконечно малым, если
+    $lim_{x\to\infty} x_n = 0$
+\end{definition}
+
+\begin{theorem}
+    $a = \lim_{x\to\infty} x_n \implies x_n = a + \alpha_n$, $\alpha_n$ -- бесконечно малая последовательность
+
+    $\forall \epsilon > 0 \quad \exists N \quad \forall n > N \implies |x_n - a| < \epsilon_n$
+
+    $\alpha_n = x_n - a$
+
+    $x_n = a + \alpha_n$
+
+    $\lim_{n\to\infty} \alpha_n = 0$
+\end{theorem}
+
+\begin{definition}
+    $\{x_n\}$ (последовательность) называется ограниченной, если $\exists M > 0 \quad \forall n \implies |x_n| \leq M$
+\end{definition}
+
+\begin{definition}
+    $\{x_n\}$ (последовательность) называется неограниченной, если $\forall M > 0 \quad \exists n_0 \implies |x_n| > M$
+\end{definition}
+
+\begin{definition}
+    $\{x_n\}$ (последовательность) называется бесконечно большой, если $\forall M > 0 \quad \exists N \quad \forall n > N \implies |x_n| > M$
+\end{definition}
+
+
+% утверждение
+\begin{statement}
+    Сходящиеся последовательности ограничены
+\end{statement}
+
+\begin{statement}
+    $a = \lim_{n\to\infty} x_n \implies \exists M > 0 \quad \forall n \in \NN \implies |x_n| \leq M$
+\end{statement}
