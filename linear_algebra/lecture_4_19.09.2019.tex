@@ -1,0 +1,215 @@
+\section{Метод Гаусса решения СЛУ (метод исключения неизвестных)}
+
+Дана СЛУ с расширенной матрицей $(A | b)$
+
+Было: элементарные преобразования строк в $(A | b)$ сохраняют множество решений.
+
+\textbf{Алгоритм} 
+
+Прямой ход метода Гаусса
+
+Выполняя элементарные преобразования строк в $(A | b)$, приведем $A$ к ступенчатому виду:
+
+\begin{equation*}
+    \begin{pmatrix} 
+        0 & \dots & 0 & a_{ij_1} & \dots & \dots & \dots & b_1 \\
+        0 & \dots & 0 & 0 & a_{2j_2} & \dots & \dots & b_2 \\
+        \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+        0 & 0 & 0 & \dots & 0 & 0 & a_{rj_r} & b_r \\
+        0 & 0 & 0 & \dots & 0 & 0 & 0 & b_{r + 1} \\
+        0 & 0 & 0 & \dots & 0 & 0 & 0 & 0
+    \end{pmatrix} 
+.\end{equation*}
+
+\begin{description}
+\item[Случай 1] $\exists i \geq r + 1 : b_i \neq 0$
+
+    Тогда в новой СЛУ $i$-е уравнение $0 \cdot x_1 + \dots + 0 \cdot x_n = b_i$, т.е. $0 = b_i \implies $ СЛУ несовместна 
+
+\item[Случай 2] либо $r = m$, либо $b_i = 0 \quad \forall i \geq r + 1$
+
+    Выполняя элементарные преобразования строк приводим матрицу к улучшенному ступенчатому виду -- обратный ход метода Гаусса
+
+    \begin{equation*}
+        \begin{pmatrix}
+            0 & \dots & 0 & 1 & * & 0 & * & 0 & 0 & * \\
+            0 & \dots & 0 & 0 & \dots & 1 & * & 0 & 0 & * \\
+            0 & \dots & 0 & 0 & \dots & 0 & 0 & 1 & 0 & * \\
+            \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+            0 & 0 & 0 & \dots & \dots & \dots & \dots & 0 & 1 & * \\
+            0 & 0 & 0 & \dots & 0 & 0 & 0 & 0 & 0 & 0
+        \end{pmatrix}
+    \end{equation*}
+
+    Неизвестные $x_1, x_2, \dots, x_r$ называются \textit{главными}, а остальные \textit{свободными}.
+
+    \begin{description}
+    \item[Подслучай 2.1] $r = n$, т.е. все неизвестные -- главные 
+
+        \begin{equation*}
+            \begin{pmatrix} 
+                1 & \dots & 0 b_1 \\
+                \dots & \ddots & \dots & \dots \\
+                0 & \dots & 1 & b_r \\
+                0 & \dots & 0 & 0
+            \end{pmatrix} \leftrightarrow \begin{cases}
+                x_1 = b_1 \\
+                x_2 = b_2 \\
+                \vdots \\
+                x_r = b_r
+            \end{cases} \text{ -- единственное решение}   
+        .\end{equation*}
+    \item[Подслучай 2.2] $r < n$, т.е. есть хотя бы одна свободная неизвестная
+        
+        Перенесем в каждом уравнении все члены со свободными неизвестными в правую часть, получаем выражения всех главных неизвестных через свободные, эти выражения называется \textit{общим решением исходной СЛУ}.
+    \end{description}
+\end{description}
+
+\begin{example}
+    Улучшенный ступенчатый вид:
+    \begin{equation*}
+        \begin{pmatrix} 
+            1 & 3 & 0 & 1 && -1 \\
+            0 & 0 & 1 & -2 && 4
+        \end{pmatrix} 
+    .\end{equation*}
+
+    Главные неизвестные: $x_1, x_3$
+
+    Свободные неизвестные: $x_2, x_4$.
+
+    $x_2 = t_1, x_4 = t_2$ -- параметры.
+
+    \begin{equation*}
+       kek % Пример из конспектов
+    .\end{equation*}
+\end{example}
+
+\begin{consequence}
+    Всякая СЛУ с коэффициентами из $\RR$ имеет либо 0 решений, либо одно решение, либо бесконечно много решений.
+\end{consequence}
+
+\begin{definition}
+    СЛУ называется однородной (ОСЛУ), если все её правые части равны 0. Расширенная: $(A | 0)$ 
+\end{definition}
+
+\textbf{Очевидный факт: } Всякая ОСЛУ имеет нулевое решение $(x_1 = x_2 = \dots = x_n = 0)$.
+
+\begin{consequence}
+    Всякая ОСЛУ либо имеет ровно 1 решение (нулевое), либо бесконечно много решений.
+\end{consequence}
+
+\begin{consequence}
+    Всякая ОСЛУ имеет, у которой число неизвестных больше числа уравнений, имеет ненулевое решение
+\end{consequence}
+
+\begin{proof}
+    В ступенчатом виде будет хотя бы одна свободная неизвестная. Придавая ей ненулевое значение, получим ненулевое решение
+\end{proof}
+
+\subsection{} % Придумать название)0
+
+\begin{equation}
+    Ax = b \text{, совместная}
+    \tag{$\star$}
+.\end{equation}
+
+Частное решение СЛУ($\star$) -- это какое то одно её решение.
+
+\begin{statement}
+    $Ax = b$ -- совместная СЛУ.
+
+    $x_0$ -- частное решение
+
+    $S \subset \RR^n$ -- множество решений ОСЛУ $Ax = 0$
+
+    $L \subset \RR^n $ -- множество решений $Ax = b$.
+
+    Тогда, $L = x_0 + S$, где $x_0 + S = \{x_0 + v | v \in S\}$
+\end{statement}
+
+\begin{proof}~
+    \begin{enumerate}
+    \item 
+        Пусть $u \in L$. 
+        Положим $v = u - x_0$
+
+        Тогда $u = x_0 + v$. $Av = A(u - x_0) = Au - Ax_0 = b - b = 0 \implies v \in S \implies L \subset x_0 + S$
+
+    \item
+        Пусть $v \in S$, положим $u = x_0 + v$.
+
+        Тогда, $Au = A(x_0 + v) = Ax_0 + Av = b + 0 = b \implies u \in L \implies x_0 + S \subset L$
+
+    \end{enumerate}
+\end{proof}
+
+\subsection{Матричные уравнения}
+
+\begin{enumerate}
+\item $AX = B$
+    A, B известны
+    X -- неизвестная матрица
+
+\item $XA = C$
+    A, C известны
+    X -- неизвестная матрица
+\end{enumerate}
+
+2. $\leftrightarrow A^T X = B^T$
+
+\subsubsection{Тип (I)}
+
+$AX = B$
+
+это уравнение равносильно системе
+\begin{equation*}
+    \begin{cases}
+        AX^{(1)} = B^{(1)} \\
+        AX^{(2)} = B^{(2)} \\
+        \vdots \\
+        AX^{(p)} = B^{(p)} \\
+    \end{cases}
+.\end{equation*}
+
+Этот набор СЛУ надо решать одновременно методом Гаусса
+
+Записываем матрицу $(A|B)$ элементарными преобразованиями строк с ней приводим $A$ к улучшенному ступенчатому виду.
+
+Получаем $(A' | B')$ -- $A'$ имеет улучшенный ступенчатый вид.
+
+Остается выписать общее решение для каждой СЛУ 
+\begin{equation*}
+    \begin{cases}
+        A' x^{(1)} = B^{(1)} \\
+        A' x^{(2)} = B^{(2)} \\
+        \vdots \\
+        A' x^{(p)} = B^{(p)}
+    \end{cases}
+.\end{equation*}
+
+\subsubsection{Обратные матрицы}
+
+\begin{definition}
+    Матрица $B \in M_n$ называется \textit{обратной}, к $A$, если $AB = BA = E$.
+
+    Обозначение: $A^{-1}$
+\end{definition}
+
+Факты:
+\begin{enumerate}
+\item Если $A^{-1} E$, то она определена однозначно
+\item Если $AB = E$ для некоторой $B \in M_n$, то $BA = E$ автоматически и тогда $B = A^{-1}$
+\end{enumerate}
+
+\begin{consequence}
+    $A^{-1}$ является решение матричного уравнения $AX = E$ (если решение существует)
+\end{consequence}
+
+\subsection{Перестановки}
+
+\begin{definition}
+    \textit{Перестановкой}(или подстановкой) на множестве $\{1, 2, \dots, n\}$ называется всякое биективное (взаимно однозначное) отображение  
+
+    $\sigma : \{1, 2, \dots, n\} \to \{1, 2, \dots, n\}$
+\end{definition}
