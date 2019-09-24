@@ -1,0 +1,176 @@
+\section{Семинар 1}
+
+\subsection{Найти предел}
+
+\begin{equation*}
+    \lim_{n \to \infty} a_n = ?
+.\end{equation*}
+
+\begin{enumerate}
+\item 
+    \begin{equation*}
+        \lim_{x \to +\infty} = \frac{5n^3 - 3n^2}{n^3 + 1} = \frac{n^3(s - \frac{3}{n})}{n^3(1 + \frac{1}{n^3})} = \frac{s - \lim_{n \to \infty} \frac{3}{n}}{1 + \lim_{n \to \infty} \frac{1}{n^3}} = \frac{s}{1}
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        a_n = \frac{n + 1}{\sqrt{n^2 + n}} = \frac{n(1 + \frac{1}{n}}{n\sqrt{1 + \frac{1}{n}}} \to \frac{1}{1}
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        a_n = \sin(\sqrt{n^2 + 2} - \sqrt{n^2 + 1}) = \sin{\frac{1}{\sqrt{n^2 + 2} + \sqrt{n^2 + 1}}} \to 0
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        a_n = \frac{2^{\frac{n}{2}} + (n + 1)!}{n(3^n + n!)} \to ?
+    .\end{equation*}
+    \begin{equation*}
+        \frac{(n + 1)! (\frac{2^{\frac{n}{2}}}{(n + 1)!} + 1)}{n \cdot n! (\frac{3^n}{n!} + 1)} \to 1 \cdot \frac{1}{1} = ?
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        \lim_{n \to \infty} n^{\frac{1}{n}} = 1 \implies \sqrt[n]{n^k} \to 1
+    .\end{equation*}
+    \begin{equation*}
+        n^{\frac{1}{n}} = e^{\frac{\ln(n)}{n}} \to 1
+    .\end{equation*}
+
+    \begin{equation*}
+        (n!)^{\frac{1}{n}} = e^{\frac{\ln(n!)}{n}}
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        a_n = \frac{\sqrt[n]{n^3} + \sqrt[n]{7}}{3 \cdot \sqrt[n]{n^2} + \sqrt[n]{3n}} \to \frac{1}{2}
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        a_n = \frac{3^{\frac{1}{n}} - 1}{9^{\frac{1}{n}} - 1} = \frac{3^{\frac{1}{n}} - 1}{(3^{\frac{1}{n}} - 1)(3^{\frac{1}{n}} + 1)} = \frac{1}{3^{\frac{1}{n}} + 1} \to \frac{1}{2}
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        a_n = \sqrt[n]{3^n + 7^n} = 7 \sqrt[n]{1 + \frac{3}{7}^n} = 7 \cdot e^{\frac{\ln(1 + (\frac{3}{7})^n)}{n}} = \to 7
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        a_n = \sqrt[n]{2^n + 3^n + 4^n + 5^n} = 5\sqrt{1 + \left(\frac{2}{5}\right)^n + \left(\frac{3}{5}\right)^n + \left(\frac{4}{5}\right)^n} \to 5
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        a_n = \frac{3n^2 - 7n}{1 + 2 + \dots + n} = \frac{n^2(3 - \frac{7}{n})}{n^2(\frac{1}{2} + \frac{1}{2n})} \to \frac{3}{\frac{1}{2}} = 6
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        a_n = \frac{1}{\sqrt{n^2 + 1}} + \frac{1}{\sqrt{n^2 + 2}} + \dots + \frac{1}{\sqrt{n^2 + n}}
+    \end{equation*}
+    \begin{equation*}
+        \frac{n}{\sqrt{n^2 + n}} \leq a_n \leq \frac{n}{\sqrt{n^2 + 1}}
+    \end{equation*}
+    \begin{equation*}
+        1 \leq a_n \leq 1
+    \end{equation*}
+    \begin{equation*}
+        a_n \to 1
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        a_1 = 1, \ a_{n + 1} = \frac{1}{2}(a_n + \frac{2}{a_n}) \quad \forall n \geq 1
+    .\end{equation*}
+    \begin{equation*}
+        a_1 = 1
+    \end{equation*}
+    \begin{equation*}
+        a_2 = \frac{1}{2}(1 + 2) = \frac{3}{2}
+    \end{equation*}
+    Предположим, что предел есть
+    \begin{equation*}
+        \exists \lim_{n \to \infty} a_n = a \implies a = \frac{1}{2}\left(a + \frac{2}{a}\right) \implies a = \pm \sqrt{2}
+    .\end{equation*}
+    Осталось доказаться существование предела
+
+    Докажем, что $\{a_n\}$ ограничена и монотонна.
+
+    Доказательство ограниченности:
+
+    Гипотеза: $a_n \geq \sqrt{2}$
+
+    \begin{equation*}
+        a_{n + 1} - \sqrt{2} = \frac{1}{2} a_n + \frac{1}{a_n} - \sqrt{2} = \frac{1}{2a^n}(a_n^2 + 2 - 2\sqrt{2}a_n) = \frac{1}{2a_n} (a_n - \sqrt{2})^2 \geq 0
+    .\end{equation*}
+
+    Либо ($a + b \geq 2 \sqrt{a \cdot b}$):
+    \begin{equation*}
+        a_{n + 1} = \frac{1}{2}(a_n + \frac{2}{a_n}) \geq \frac{1}{2} 2\sqrt{a_n \cdot \frac{2}{a_n}} = \sqrt{2}
+    .\end{equation*}
+
+    Теперь монотонность:
+
+    \begin{equation*}
+        0 \leq a_n - a_{n + 1} = a_n - \frac{1}{2}a_n - \frac{1}{a_n} = \frac{1}{2}a_n - \frac{1}{a_n} = \frac{1}{2a_n}(\overbrace{a_n^2 - 2}^{\geq 0})
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        \lim_{n \to \infty} (1 + \frac{1}{n})^n = e
+    .\end{equation*}
+
+    \begin{equation*}
+        \lim_{n \to \infty} n \cdot \sin \frac{1}{n} = ?
+    .\end{equation*}
+
+    \begin{equation*}
+        \lim_{n \to \infty} n \cdot ln(1 + \frac{1}{n}) = 1
+    .\end{equation*}
+
+    \begin{equation*}
+        \lim_{n \to \infty} (1 + \frac{11}{n})^n
+    .\end{equation*}
+
+    \begin{equation*}
+        (1 + \frac{11}{n})^{\frac{11}{n} \cdot 11}
+    .\end{equation*}
+\end{enumerate}
+
+\subsection{Разные штуки}
+\begin{enumerate}
+\item
+    $\{a_n\}_{n = 1}^\infty \to a \overset{?}{\implies} f(a_n) \to f(a)$
+
+    $a_n = \frac{1}{n} \to 0 = a$
+
+    $f(x) = sgn(x) = \begin{cases}
+        1, &x > 0 \\
+        0, &x = 0 \\
+        -1, &x < 0
+    \end{cases}$
+
+    $f(a_n) = 1, \forall n \in \NN$
+
+    $f(a) = f(0) = 0$
+
+\item
+    $\lim_{n \to \infty} \frac{n^2}{\lambda^n} = 0$
+
+\item
+    $\lim_{n \to \infty} \frac{\lambda^n}{(n!)^\alpha} = 0$
+
+    $\lambda \in \RR, \alpha > 0$
+
+\item
+    $\lim_{n \to \infty} \frac{(ln(n)^\beta}{n^2}$
+
+    $\alpha > 0, \beta \in \RR$
+
+\item
+    $\lim_{n \to \infty} \frac{\sqrt{2 \pi n} (\frac{n}{e})^n}{n!} = 1$
+\end{enumerate}
+
