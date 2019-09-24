@@ -1,0 +1,162 @@
+\section{Лекция 4}
+
+\begin{statement}
+    $\{a_n\}$ ограничена сверху. 
+
+    $a = \lim x_n$
+    
+    $\exists M : \forall n \implies x_n \leq M$
+\end{statement}
+
+\begin{proof}
+    Пусть $a > M$
+
+    $a = \lim_{n \to \infty} x_n$ -- $\forall \epsilon > \exists N : \forall n > N \implies |x_n - a| < \epsilon$
+
+    Распишем модуль
+    $a - \epsilon < x_n < a + \epsilon$
+
+    Наше предположение: $a > M$
+
+    Отсюда сразу следует, что $a - \epsilon < x_n \leq M$
+
+    Возьмем $\epsilon$ такое, что $a - \epsilon > M$, например $\epsilon = \frac{a - M}{2}$
+
+    Тогда, начиная с некоторого $N$ все точки после $x_N$ будут лежать в $\epsilon$-окресности точки $a$.
+
+    $\forall n > N \implies x_n \geq M$
+\end{proof}
+
+\begin{statement}
+    $a = \lim_{n \to \infty} x_n$, $b = \lim_{n \to \infty} x_n$
+    Тогда, $a = b$.
+\end{statement}
+
+\begin{proof}
+   Допустим $a < b$ 
+
+   $\forall \epsilon > 0 \ \exists N_1 : \forall n > N_1 \implies |x_n - a| < \epsilon$
+    
+   $\forall \epsilon > 0 \ \exists N_2 : \forall n > N_2 \implies |x_n - b| < \epsilon$
+
+    Выбираем $N = max(N_1, N_2)$
+
+    Тогда, для $N$ будут справедливы оба неравенства.
+
+    Например, пусть $\epsilon = \frac{b - a}{2}$, тогда с одной стороны 
+    \begin{equation*}
+        \forall n > N \implies x_n < a + \epsilon < \frac{a + b}{2}  
+    .\end{equation*}
+    а с другой стороны 
+    \begin{equation*}
+        \forall n > N \implies x_n > b - \epsilon > \frac{a + b}{2}
+    .\end{equation*}
+\end{proof}
+
+\begin{statement}
+    $\lim_{n \to \infty} x_n = a$
+
+    $\lim_{n \to \infty} y_n = b$
+
+    \begin{enumerate}
+        \item $\lim_{n \to \infty} (x_n + y_n) = a + b$
+        \item $\lim_{n \to \infty} x_n y_n = a \cdot b$
+        \itme $\lim_{n \to \infty} \frac{x_n}{y_n} = \frac{a}{b}$
+
+    \end{enumerate}
+\end{statement}
+
+\begin{proof}~
+    \begin{enumerate}
+    \item 
+        Если есть есть беконечно малые последовательности, то их сумма тоже бесконечно малая.
+        
+        $\alpha_n$ -- бесконечно малая
+        
+        $\beta_n$ -- бесконечно малая
+
+        $\alpha_n + \beta_n$ -- бесконечно малая
+
+        $\lim_{n \to \infty} \alpha_n = 0$ --- $\forall \epsilon > 0 \ \exists N_1 : \forall n > N_1 \implies |\alpha_n| < \frac{\epsilon}{2}$
+
+        $\lim_{n \to \infty} \beta_n = 0$ --- $\forall \epsilon > 0 \ \exists N_2 : \forall n > N_2 \implies |\beta_n|< \frac{\epsilon}{2}$
+
+        Пусть $N = max(N_1, N_2)$
+
+        $\forall \epsilon > 0 \ \exists N : \forall n > N \implies |\alpha_n + \beta_n| \leq |\alpha_n| + |\beta_n| < \epsilon$
+    
+        $\lim_{n \to \infty} x_n = a$ --- $\forall \frac{\epsilon}{C} > 0 \ \exists N : \forall n > N \implies |x_n - a| < C \cdot \frac{\epsilon}{C} = \epsilon$
+
+        $\{\alpha_n\}$ -- бесконечно малая
+
+        $\{z_n\}$ -- ораниченная
+        ($\exists M > 0 : \forall n \implies \{z_n\} = M$)
+
+        $\{\gamma_n\} = \{\alpha_n \cdot z_n\}$ -- бесконечно малая
+
+        $\forall \epsilon > 0 \ \exists N : \forall n > N \implies |\alpha_n| < \epsilon$
+
+        $|\gamma_n| = |\alpha_n z_n| = |z_n||\alpha_n| \leq M \cdot \epsilon$
+
+        $a = \lim_{n \to \infty} x_n \implies x_n = a + \alpha_n$
+
+        $b = \lim_{n \to \infty} y_n \implies y_n = b + \beta_n$
+
+        $x_n + y_n = a + b + (\alpha_n + \beta_n)$
+
+        $\mu_n = \alpha_n + \beta_n$ -- бесконечно малая
+    \item
+        $x_n \cdot y_n = (a + \alpha_n)(b + \beta_n) = a \cdot b + (\alpha_n \cdot b + \beta_n \cdot a + \alpha_n \cdot \beta_n) = a \cdot b + \mu_n$
+
+        $\mu_n = \alpha_n \cdot b + \beta_n \cdot a + \alpha_n \cdot \beta_n$
+
+    \item
+        $\frac{x_n}{y_n} = \frac{a + \alpha_n}{b + \beta_n} = \frac{a}{b} + \underbrace{\frac{a + \alpha_n}{b + \beta_n} - \frac{a}{b}}_{\mu_n}$
+
+        $\mu_n = \frac{a + \alpha_n}{b + \beta_n} + \frac{a}{b} = \frac{a \cdot b + \alpha_n \cdot b - a \cdot b - a \beta_n}{b(b + \beta_n)} = \alpha_n \cdot b + \beta_n \cdot a + \frac{1}{b(b + \beta_n}$
+
+        $|b + \beta_n| = |b - (-\beta_n)| \geq ||b| - |\beta_n||$
+
+        $\beta_n$ -- бесконечно малая
+
+        $\forall \epsilon > 0 \ \exists N : \forall n > N \implies |b_n| < \epsilon$
+
+        $\epsilon = \frac{|b|}{2}$
+
+        $|b + \beta_n| > \frac{|b|}{2}$
+
+        $\frac{1}{|b + \beta_n|} < \frac{2}{|b|}$
+
+        $\frac{x_n}{y_n} = \frac{a}{b} + \mu_n$, $\mu_n$ -- бесконечно малая
+
+        $\lim_{n \to \infty} \frac{x_n}{y_n} = \frac{a}{b}$
+    \end{enumerate}
+\end{proof}
+
+
+\begin{theorem}
+    Монотонная ограниченная последовательность сходится.
+\end{theorem}
+
+\begin{enumerate}
+\item $\forall n \implies x_n < x_{n + 1}$
+\item $\exists M : \forall n \implies x_n \leq M$
+\end{enumerate}
+
+\begin{proof}
+    \begin{enum}
+    \item
+        $\{x_n\}$ ограничено сверху
+
+        $\exists M = \sup \{x_n\}$
+
+        $M \overset{?}{=} \lim_{n \to \infty} x_n$
+
+        $\forall n \implies x_n \leq M$
+
+        $\forall e > 0 \ \exists \overline{x}_n \in \{x_n\} : \overline{x}_n > M - \epsilon$
+        
+        $\overline{x}_n = x_{n_0} > M - \epsilon$
+    \end{enum}
+\end{proof}
+
