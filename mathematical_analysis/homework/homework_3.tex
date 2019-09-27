@@ -1,0 +1,53 @@
+\documentclass[a4paper]{article}
+\usepackage{../../header}
+
+\begin{document}
+    \section*{Математический анализ}
+    \subsection*{ДЗ к Семинар 3}
+    
+    \begin{enumerate}
+    \item 
+        Найти предел $\lim_{n \to +\infty} a_n$, если
+
+        \begin{enumerate}[label=\alph*)]
+        \item $a_n = \frac{-3n + 10}{-20n + 1}$
+        \item $a_n = \frac{\sqrt[12]{n^{48} + 19^{12} n^2 + 2019}}{\sqrt[4]{16n^{16} + 12^{19} n^8 + n^4 + n^2 + 1} + 3n^4}$
+        \item $a_n = \cos\left(\sqrt{n^2 + 20n} - \sqrt{n^2 + 15n}\right)$
+        \item $a_n = \sqrt[n]{\frac{2^n + 3^n + 4^n}{5^n + 6^n}}$
+        \item $a_n = \frac{10^n + n!}{2^n + (n + 1)!}$
+        \item $a_n = \left(\frac{n^2 - 1}{n^2 - 2}\right)^{n^2}$
+        \end{enumerate}
+    
+    \item
+        Пусть $a_1, a_2, \dots, a_m > 0$ -- фиксированные вещественные числа. Тогда, найти
+
+        \begin{enumerate}[label=\alph*)]
+            \item $\lim_{n \to +\infty} \sqrt[n]{a_1^n + a_2^n + \dots + a_m^n}$;
+            \item $\lim_{n \to +\infty} \frac{1}{\sqrt[n]{a_1^{-n} + a_2^{-n} + \dots + a_m^{-n}}}$
+        \end{enumerate}
+
+    \item
+        \
+        \begin{framed}
+            \begin{theorem}[Штольца]
+                \label{shtolz}
+                Пусть
+                \begin{enumerate}[label=\alph*)]
+                \item $b_{n + 1} > b_n \quad \forall n \in \NN$
+                \item $\lim_{n \to +\infty} b_n = +\infty$
+                \item $\lim_{n \to +\infty} \frac{a_{n + 1} - a_n}{b_{n + 1} - b_n} = L \in \RR$
+                \end{enumerate}
+
+                Тогда, $\lim_{n \to +\infty} \frac{a_n}{b_n} = L$
+            \end{theorem}
+        \end{framed}
+        
+        Воспользовавшись \ref{shtolz}, вычислить: $\lim a_n$, если
+        \begin{enumerate}[label=\alph*)]
+        \item $a_n = \frac{1 + \sqrt{2} + \sqrt[3]{3} + \dots + \sqrt[n]{n}}{n}$
+        \item $a_n = \frac{1^k + 2^k + 3^k + \dots + n^k}{n^{k + 1}}$, $k \in \NN$ -- произвольное
+        \item $a_n = \frac{1^k + 2^k + 3^k + \dots + n^k}{n^k} - \frac{n}{k + 1}$, $k \in \NN$ -- произвольное
+        \end{enumerate}
+    \end{enumerate}
+
+\end{document}
