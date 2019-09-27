@@ -1,0 +1,77 @@
+\documentclass[a4paper]{article}
+\usepackage{../../header}
+
+\begin{document}
+    \section*{Математический анализ}
+    \subsection*{ДЗ к Семинар 2}
+    
+    \begin{enumerate}
+    \item 
+        \begin{enumerate}[label=\alph*)]
+        \item 
+            Пусть последовательности $\{a_n\}_1^\infty$ и $\{b_n\}_1^\infty$ расходятся.
+
+            Верно ли, что последовательности $\{a_n + b_n\}_1^\infty$ и $\{a_n b_n\}_1^\infty$ также расходятся?
+        \item
+            Пусть $\{a_n\}_1^\infty$ сходится и $\{b_n\}_1^\infty$ расходится. Что можно сказать о сходимости/расходимости $\{a_n + b_n\}_1^\infty$ и $\{a_n b_n\}_1^\infty$?
+        \end{enumerate}
+    \item
+        \label{task_2}
+        Пусть последовательности $\{a_n\}_1^\infty$ и $\{b_n\}_1^\infty$ таковы, что $\lim_{n \to +\infty} a_n b_n = 0$. Верно ли следующее:
+        \begin{enumerate}[label=\alph*)]
+        \item
+            $\lim_{n \to +\infty} a_n = \lim_{n \to +\infty} b_n = 0$?
+        \item
+            $\lim_{n \to +\infty} a_n = 0$ или $\lim_{n \to +\infty} b_n = 0$?
+        \end{enumerate}
+
+    \item
+        Тот же вопрос что и в \ref{task_2}, но дополнительно известно, что $\{a_n\}_1^\infty$ и $\{b_n\}_1^\infty$ сходятся.
+
+    \item
+        Найти $\underset{n \in \NN}{\inf} \{(-1)^n \frac{3n}{2n - 1}\}_1^\infty$ и $\underset{n \in \NN}{\sup} \{(-1)^n \frac{3n}{2n - 1}\}_1^\infty$.
+
+    \item
+        Найти предел $\lim_{n \to +\infty} a_n$, если:
+
+        \begin{enumerate}[label=\alph*)]
+        \item
+            $a_n = \frac{3n^2 - 7n}{4n^2 + n + 5}$;
+        \item
+            $a_n = \sqrt{n^2 + n} - \sqrt{n^2 - n}$;
+        \item
+            $a_n = \frac{n^2 + 3n - 2}{1 + 2 + \dots + (n - 1) + n}$;
+        \item
+            $a_n = \frac{1}{n^2} + \frac{2}{n^2} + \dots + \frac{n - 1}{n^2}$
+
+            Hint: сложить первый и последний член
+
+        \item
+            $a_n = \frac{1}{\sqrt{n}} \left( \frac{1}{\sqrt{1} + \sqrt{3}} + \frac{1}{\sqrt{3} + \sqrt{5}} + \dots + \frac{1}{\sqrt{2n - 1} + \sqrt{2n + 1}} \right)$
+
+            Hint: телескопическое суммирование
+
+        \item
+            \label{5_f}
+            $a_n = \frac{1}{n}\left(\sin(1) + \sin(2) + \dots + \sin(n)\right)$
+
+            Hint:
+            \begin{enumerate}[label=\arabic*)]
+            \item домножить $a_n$ на $\sin \frac{1}{2}$
+            \item воспользоваться формулой $2 \sin x \cdot \cos x = \cos(x - y) - \cos(x + y)$
+            \item телескопическое суммирование
+            \item воспользоваться формулой $\cos(x) - \cos(y) = 2 \sin \frac{x + y}{2} \cdot \sin \frac{y - x}{2}$ (необязательно)
+            \item заметить, что $|\sin x| \leq 1$.
+            \end{enumerate}
+
+        \end{enumerate}
+
+    \item
+        Пусть $\lim_{n \to +\infty} a_n = a$, доказать, что $\lim_{n \to +\infty} b_n = a$, если $b_n = \frac{a_1 + a_2 + \dots + a_n}{n}$
+
+    \end{enumerate}
+
+    \begin{remark}
+        как показывает пункт \ref{5_f} из $\lim_{n \to +\infty} b_n = a$ \textit{не следует} $\lim_{n \to +\infty} a_n = a$
+    \end{remark}
+\end{document}
