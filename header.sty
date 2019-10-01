@@ -11,6 +11,7 @@
 \usepackage{tabu}
 \usepackage{tikz}
 \usepackage{framed}
+\usepackage{csquotes}
 
 \AddEnumerateCounter{\asbuk}{\russian@alph}{щ}
 \renewcommand\qedsymbol{$\blacksquare$}
@@ -48,4 +49,9 @@
   \left(\begin{array}{@{}*{#1}{c}|c@{}}
 }{%
   \end{array}\right)
+}
+
+% Символ делимости (три вертикальные точки)
+\DeclareRobustCommand{\divby}{%
+  \mathrel{\text{\vbox{\baselineskip.65ex\lineskiplimit0pt\hbox{.}\hbox{.}\hbox{.}}}}%
 }

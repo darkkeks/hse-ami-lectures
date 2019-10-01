@@ -1,0 +1,161 @@
+\section{Семинар 4}
+
+\begin{enumerate}
+\item 
+    \begin{equation*}
+        \lim_{n \to \infty} f(n)^{g(n)} = e^{\lim_{n \to \infty}(ln(f(n)) \cdot g(n))}
+    .\end{equation*}
+
+    \begin{equation*}
+        \left(\frac{n^2 - 1}{n^2 - 2}\right)^{n^2} = \left(1 + \frac{1}{n^2 - 2}\right)^{(n^2 - 2)\frac{n^2}{n^2 - 2}}
+        \xrightarrow[]{} e
+    .\end{equation*}
+
+    \begin{equation*}
+        n \cdot ln\left(1 + \frac{1}{n}\right) 
+        \xrightarrow[]{} 1
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        \lim_{x \to a} f(x) = A
+    .\end{equation*}
+    \begin{equation*}
+        \forall \epsilon > 0 \ \exists \delta_\epsilon > 0 : \forall x \in \overbrace{(a - \delta_\epsilon, a + \delta_\epsilon) \setminus \{a\}}^{U_{\delta_\epsilon} (a) } \implies |f(x) - A| < \epsilon
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        \lim_{x \to 0} \frac{x^2 - 1}{2x^2 - x - 1} \to \frac{-1}{-1} 1
+    .\end{equation*}
+    \begin{equation*}
+        f(x) \to a, g(x) \to b, x \to x_0 \implies f(x)g(x) \to ab, \frac{f(x)}{g(x)} \to \frac{a}{b} (b \neq 0)
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        \lim_{x \to \infty} \frac{x^2 - 1}{2x^2 - x - 1} = \frac{x^2(1 - \frac{1}{x})}{x^2(2 - \frac{1}{x} - \frac{1}{x^2})} \to \frac{1}{2}
+    .\end{equation*}
+
+    \begin{equation*}
+        \lim_{x \to 1} \frac{x^2 - 1}{2x^2 - x - 1} = \frac{(x - 1)(x + 1)}{(2x + 1)(x - 1)} \to \frac{2}{3}
+    .\end{equation*}
+
+\item
+    $m, n \in \NN$
+    \begin{equation*}
+        \lim_{x \to 1} \frac{x^{m} - 1}{x^{n} - 1} 
+        = \frac{(x - 1)\overbrace{(1 + x + x^2 + \dots + x^{m - 1})}^{m}}{(x - 1)\underbrace{(1 + x + x^2 + \dots + x^{n - 1})}_n}
+        \xrightarrow[]{} \frac{m}{n}
+    .\end{equation*}
+    \begin{equation*}
+        a^{n} - b^{n} = (a - b)(a^{n - 1}b^0 + a^{n - 2}b^1 + \dots + a^0b^{n - 1})
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        \lim_{x \to 0} \frac{\overbrace{(1 + x)(1 + 2x)(1 + 3x)(1 + 4x)}^{P(x)} - 1}{x}
+    .\end{equation*}
+    Свободный член $P(x)$ -- 1 ($a_0$).
+    
+    Коэффициент перед $x$ -- $1 \cdot 1 \cdot 1 \cdot 1 \cdot x + 1 \cdot 2x \cdot 1 \cdot 1 + 1 \cdot 1 \cdot 3x \cdot 1 + 1 \cdot 1 \cdot 1 \cdot 4x = 10x$ ($a_1$).
+
+    \begin{equation*}
+        = \frac{x \cdot \left(10 + a_2 x + a_3 x^2 + a_4 x^3\right)}{x}
+        \xrightarrow[x \to 0]{} 10
+    .\end{equation*}
+
+\item
+    $m, n \in \NN$
+    \begin{equation*}
+        \lim_{x \to 1} \frac{\sqrt[m]{x} - 1}{\sqrt[n]{x} - 1}
+        = \frac{\sqrt[m]{t^{mn} - 1}}{\sqrt[n]{t^{mn} - 1}} 
+        = \frac{t^n - 1}{t^m - 1} 
+        \xrightarrow[]{} \frac{n}{m}
+    .\end{equation*}
+
+    \begin{equation*}
+        x = t^{mn} \xrightarrow[]{} 1
+    .\end{equation*}
+
+\item
+    Золотые лимиты.
+
+    \begin{equation*}
+        \frac{\sin(\lambda x)}{x} 
+        = \frac{\sin(\lambda x)}{\lambda x} \cdot \frac{\lambda x}{x} 
+        = \lambda
+    .\end{equation*}
+
+    \begin{equation*}
+        \lim_{x \to 0} \frac{1 - \cos x}{x^2} 
+        = \frac{1}{2}
+    .\end{equation*}
+
+    \begin{equation*}
+        \lim_{x \to 0} \frac{\sin x}{x} = 1
+    .\end{equation*}
+
+    \begin{equation*}
+        \lim_{x \to 0} \frac{\tg x}{x} = 1
+    .\end{equation*}
+
+    \begin{equation*}
+        \lim_{x \to 0} \frac{\arctg x}{x} = 1
+    .\end{equation*}
+
+    \begin{equation*}
+        \lim_{x \to 0} \frac{\arcsin x}{x} = 1
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        \lim_{x \to 0} \frac{1 - \cos(8x)}{5x^2} 
+        = \frac{1 - \cos 8x}{(8x)^2} \cdot \frac{(8x)^2}{5x^2} 
+        = \frac{8^2}{5} \cdot \frac{1}{2} 
+        = \frac{32}{5}
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        \lim_{x \to a} \left\{ \frac{\sin x - \sin a}{x - a} 
+        = \frac{2 \cos\left(\frac{x + a}{2}\right) \sin \left(\frac{x - a}{2}\right)}{x - a}
+        \right\} = \cos a
+    .\end{equation*}
+
+    \begin{equation*}
+        \sin x - \sin y = 2 \cos\left(\frac{x + y}{2}\right) \sin\left(\frac{x - y}{2}\right)
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        \lim_{x \to 0} \left\{ \frac{\sin ax}{\arctg bx} 
+        = \frac{\sin ax}{ax} \cdot \frac{bx}{\arctg bx} \cdot \frac{ax}{bx} \right\}
+        = \frac{a}{b}
+    .\end{equation*}
+
+\item
+    \begin{equation*}
+        x = 1 + x, \ t = 1 - x
+    .\end{equation*}
+
+    \begin{equation*}
+        x \to 1 \implies t \to 0
+    .\end{equation*}
+
+    \begin{equation*}
+        \lim_{x \to 1} \left( \frac{m}{1 - x^m} - \frac{n}{1 - x^n} \right) 
+        = \lim_{t \to 0} \left( \frac{m}{1 - (1 + t)^m} - \frac{n}{1 - (1 + t)^n} \right)
+        = \dots
+        = \frac{m - n}{2}
+    .\end{equation*}
+
+    \begin{equation*}
+        1 - (1 + t)^m = 1 - \left(1 + \binom{m}{1}t + \binom{m}{2}t^2 + \dots \right)
+        = - \binom{m}{1}t - \binom{m}{2} t^2 - \dots
+    .\end{equation*}
+
+    \begin{equation*}
+        1 - (1 + t)^n = -\binom{n}{1} t - \binom{n}{2} t^2 - \dots
+    .\end{equation*}
+\end{enumerate}
