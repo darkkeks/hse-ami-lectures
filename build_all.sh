@@ -17,4 +17,5 @@ build mathematical_analysis mathematical_analysis
 build mathematical_analysis/homework homework_1
 build mathematical_analysis/homework homework_2
 build mathematical_analysis/homework homework_3
+build mathematical_analysis/homework homework_4
 
